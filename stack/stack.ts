@@ -42,7 +42,7 @@ class Stack {
     const holding = this.top;
     this.top =  this.top.next;
     this.length--;
-    return this;
+    return holding;
   }
 }
 
