@@ -1,4 +1,4 @@
-class LinkedNode {
+export class LinkedNode {
   next:  LinkedNode | null;
 
   constructor(public value: any){
@@ -87,6 +87,28 @@ class LinkedList {
 
     return currentNode;
   }
+
+  reverse(){
+    if(!this.head.next){
+      return this.head
+    }
+
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp
+    }
+
+    this.head.next = null;
+    this.head = first;
+
+    return this.printList()
+  }
 }
 
 const myList = new LinkedList(10);
@@ -98,3 +120,5 @@ myList.insert(4, 6)
 console.log(myList.printList());
 myList.remove(1)
 console.log(myList.printList());
+
+console.log(myList.reverse());
