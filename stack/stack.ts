@@ -51,5 +51,5 @@ stack.push(5);
 stack.push(10);
 stack.push(16);
 stack.push(0);
-// stack.pop();
+stack.pop();
 console.log(stack.pop());
